@@ -25,3 +25,8 @@
     margin: 1px 1px;
     margin-bottom : 0;
 }
+
+.card-list{
+    position: sticky;
+    top : 0
+}
