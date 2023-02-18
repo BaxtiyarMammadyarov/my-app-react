@@ -11,7 +11,7 @@ const HomeMainComponent = () => {
 
 
     return (
-        <div className='container dis-flex '>
+        <div className='container  dis-flex'>
             <div className='row dis-80'>
                 <ListProductComponenet />
             </div>

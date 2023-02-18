@@ -1,28 +1,25 @@
 import React, {useContext, useEffect, useState} from 'react'
-import ProductService from '../services/ProductService'
+
 import CardService from "../services/CardService";
 import "./ListProductComponent.css"
 import {GlobalContext} from "../context/GlobalState";
+import data from "bootstrap/js/src/dom/data";
 
 
 const ListProductComponenet = () => {
-    // const [products, setProducts] = useState([])
-    // const [cards, setCards] = useState([])
-    // useEffect(() => {
-    //     ProductService.getAllProduct().then((response) => {
-    //         setProducts(response.data);
-    //         // console.log(response.data);
-    //     }).catch(error => {
-    //         console.log(error);
-    //     })
-    //     CardService.getAllCards().then((response)=>{
-    //         setCards(response.data);
-    //     }).catch(error => {
-    //         console.log(error);
-    //     })
-    // }, []);
+
     const {products} = useContext(GlobalContext)
+    const {setProducts} = useContext(GlobalContext)
+    const {setCards} = useContext(GlobalContext)
+    const {cards} = useContext(GlobalContext)
+    const {cardArr} = useContext(GlobalContext)
     const {setCardArr} = useContext(GlobalContext)
+
+
+
+
+
+
 // function  addCard(product){
 //     var jsonData = {"isbn13" : product.isbn13}
 //     // setCardList(jsonData);
@@ -30,31 +27,29 @@ const ListProductComponenet = () => {
 //     CardService.addToCard(jsonData)
 // }
     return (
-        <div className='container dis-flex'>
-            <div className='row '>
-                <div className='col-12'>
-                    <div className='row'>
+        <div className='container container-c'>
+
+
+
+                    <div className='dis-flex'>
                         {
                             products.map(
                                 product =>
 
-                                    <div className="card" style={{width: "15rem", margin: "0.1rem"}}
+                                    <div className="card product-card" style={{width: "15rem", margin: "0.1rem"}}
                                          key={product.isbn13}>
-                                        <img className="card-img-top"
-                                             style={{width: "15rem", height: "10rem", margin: "0.1rem"}}
+                                        <img className="card-img-top  card-img-top-img " style={{width: "15rem", height: "10rem", margin: "0.1rem"}}
+
                                              src={product.image} alt="Card image cap"/>
-                                        <div className="card-body" style={{width: "15rem", margin: "0.1rem"}}>
+                                        <div className="card-body card-body-title"  style={{width: "15rem", margin: "0.1rem"}}>
                                             <p className="card-title">{product.title}</p>
                                             <p className="card-subtitle mb-2 text-muted">{product.subtitle}</p>
                                         </div>
                                         <p className="card-text">{product.price}</p>
                                         <button type="button" onClick={function () {
                                             let jsonData = {"isbn13": product.isbn13}
-                                            // setCardList(jsonData);
-                                            // console.log(jsonData)
-
                                             CardService.addToCard(jsonData)
-                                            setCardArr.push(jsonData)
+                                            setCardArr(cards)
                                         }
                                         } className="btn btn-success" style={{marginBottom: "0.5rem"}}>Add to card
                                         </button>
@@ -62,10 +57,8 @@ const ListProductComponenet = () => {
                             )
                         }
                     </div>
-                </div>
 
 
-            </div>
             {/*<div className='dis-20'>*/}
             {/*    <ul>*/}
             {/*    {  cards.map(*/}

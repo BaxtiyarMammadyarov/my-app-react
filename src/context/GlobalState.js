@@ -7,7 +7,10 @@ export const GlobalContext = createContext();
 export const GlobalProvider = (props) =>{
     const [products, setProducts] = useState([])
     const [cards, setCards] = useState([])
-    const setCardArr = [];
+    const [cardArr, setCardArr] = useState([])
+    let obj = {};
+    // const setCardArr = [];
+    const setProductArr = [];
     useEffect(() => {
         ProductService.getAllProduct().then((response) => {
             setProducts(response.data);
@@ -23,6 +26,7 @@ export const GlobalProvider = (props) =>{
         }).catch(error => {
             console.log(error);
         })
-    },[setCardArr])
-    return <GlobalContext.Provider value = {{products:products,cards :cards,setCardArr : setCardArr}} >{props.children}</GlobalContext.Provider>
+    },[cardArr])
+
+    return <GlobalContext.Provider value = {{products:products,setProducts :setProducts,cards :cards,setCards: setCards,setCardArr : setCardArr,cardArr : cardArr,setProductArr:setProductArr}} >{props.children}</GlobalContext.Provider>
 }

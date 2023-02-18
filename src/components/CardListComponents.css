@@ -3,3 +3,76 @@
 ul{
     list-style-type: none;
 }
+/*.list-div{*/
+/*    background-color: #FFDC40;*/
+/*    margin: 3px;*/
+/*    border: 1px solid rgb(44, 40, 40);*/
+/*    border-bottom-right-radius: 10px;*/
+/*    border-bottom-left-radius:  10px;*/
+
+/*}*/
+.ow-cast{
+    position: relative;
+}
+.sil{
+    position: absolute;
+    right: 5px;
+}
+.sil:hover{
+    background-color: blueviolet;
+}
+.list-ul{
+    justify-content: space-between;
+    list-style-type:none;
+    margin: 5px;
+
+}
+.list-ul li{
+    text-align: center;
+    font-size: 10px;
+}
+.list-ul li span{
+    text-align: center;
+    margin: 2px;
+}
+
+.list-item{
+    overflow-y: scroll;
+    max-height: 800px;
+}
+.btn-list{
+    display: flex;
+    width: 90%;
+
+    text-align: center;
+    margin: auto;
+
+}
+.btn-list a{
+    width: 90%;
+    margin: auto;
+}
+.card {
+/*style={{ width: "10rem", margin: "5px",height: "10rem" }}*/
+    text-align: center;
+    margin: auto;
+    margin: 3px;
+    width: 90%;
+}
+.price{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.add-remove{
+
+}
+.add-remove button{
+    display: block;
+}
+.card-text button{
+    margin: 3px;
+    padding: 0;
+}
+
+
