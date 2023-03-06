@@ -26,8 +26,6 @@ const CardListComponents = () => {
                                     <div className= "price-amount">
                                         Amount : <span className="badge badge-light">  {card.amount}</span>
                                     </div>
-
-
                                     <div className="add-remove">
                                         <button type="button" className="btn btn-link" onClick={function (event) {
 
