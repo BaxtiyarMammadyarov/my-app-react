@@ -36,7 +36,7 @@ const ListProductComponenet = () => {
                             products.map(
                                 product =>
 
-                                    <div className="card product-card" style={{width: "15rem", margin: "0.1rem"}}
+                                    <div className="card product-card  card_div" style={{width: "15rem", margin: "0.1rem"}}
                                          key={product.isbn13}>
                                         <img className="card-img-top  card-img-top-img " style={{width: "15rem", height: "10rem", margin: "0.1rem"}}
 
@@ -49,9 +49,10 @@ const ListProductComponenet = () => {
                                         <button type="button" onClick={function () {
                                             let jsonData = {"isbn13": product.isbn13}
                                             CardService.addToCard(jsonData)
-                                            setCardArr(cards)
+
+                                            setCardArr(jsonData)
                                         }
-                                        } className="btn btn-success" style={{marginBottom: "0.5rem"}}>Add to card
+                                        } className="btn btn-success button_add" style={{marginBottom: "0.5rem"}}>Add to card
                                         </button>
                                     </div>
                             )

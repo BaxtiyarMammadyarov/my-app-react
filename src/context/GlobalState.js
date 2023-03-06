@@ -7,7 +7,7 @@ export const GlobalContext = createContext();
 export const GlobalProvider = (props) =>{
     const [products, setProducts] = useState([])
     const [cards, setCards] = useState([])
-    const [cardArr, setCardArr] = useState([])
+    const [cardArr, setCardArr] = useState({isbn :"test"})
     let obj = {};
     // const setCardArr = [];
     const setProductArr = [];
@@ -27,6 +27,7 @@ export const GlobalProvider = (props) =>{
             console.log(error);
         })
     },[cardArr])
+
 
     return <GlobalContext.Provider value = {{products:products,setProducts :setProducts,cards :cards,setCards: setCards,setCardArr : setCardArr,cardArr : cardArr,setProductArr:setProductArr}} >{props.children}</GlobalContext.Provider>
 }

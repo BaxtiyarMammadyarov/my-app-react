@@ -38,7 +38,7 @@ ul{
 
 .list-item{
     overflow-y: scroll;
-    max-height: 800px;
+    max-height: 700px;
 }
 .btn-list{
     display: flex;
@@ -74,5 +74,16 @@ ul{
     margin: 3px;
     padding: 0;
 }
+.price-item ,.price-amount{
+    width: 100%;
+    text-align: center;
+    background-color: aqua;
+}
+.price-amount{
+    padding-top: 20px;
+    color: #282c34;
+}
 
-
+.price-amount span{
+    color: #282c34;
+}
